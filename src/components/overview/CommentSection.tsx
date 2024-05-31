@@ -69,7 +69,7 @@ const CommentSection: React.FC<CommentSectionProps> = (props: CommentSectionProp
         <Comment key={index}>
           <>
             <CommentAuthor>
-              <AvatarImage src={'/avatar?url=' + comment.author.avatar} alt={comment.author.name} className="avatar-comment" />
+              <AvatarImage src={'/jira/avatar?url=' + comment.author.avatar} alt={comment.author.name} className="avatar-comment" />
               {comment.author.name}
             </CommentAuthor>
             <CommentItem key={index}>

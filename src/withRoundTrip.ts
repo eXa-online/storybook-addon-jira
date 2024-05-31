@@ -12,7 +12,7 @@ export const withRoundTrip = (storyFn: StoryFunction<Renderer>) => {
     [EVENTS.REQUEST]: async ({ ticketId, isForSubtask }) => {
       let data = null
       if (ticketId) {
-          const fetchedData = await fetch(`/api?ticketId=${ticketId}`)
+          const fetchedData = await fetch(`/jira/api?ticketId=${ticketId}`)
         if (fetchedData.ok) {
           try {
             data = await fetchedData.json()

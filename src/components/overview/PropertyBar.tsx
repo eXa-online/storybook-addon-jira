@@ -42,7 +42,7 @@ const PropertyBar: React.FC<PropertyBarProps> = (props: PropertyBarProps) => {
         Reporter:
         { props.reporter ?
           props.reporter?.avatar ?
-            <><AvatarImage src={'/avatar?url=' + encodeURI(props.reporter?.avatar)} alt={props.reporter?.name} title={props.reporter?.name} /><HeaderItemValue>{props.reporter?.name}</HeaderItemValue></>
+            <><AvatarImage src={'/jira/avatar?url=' + encodeURI(props.reporter?.avatar)} alt={props.reporter?.name} title={props.reporter?.name} /><HeaderItemValue>{props.reporter?.name}</HeaderItemValue></>
             : <HeaderItemValue>{props.reporter?.name}</HeaderItemValue>
           : <HeaderItemValue>...</HeaderItemValue>
         }
@@ -51,7 +51,7 @@ const PropertyBar: React.FC<PropertyBarProps> = (props: PropertyBarProps) => {
         Assigned to:
         {props.assignedTo ? 
           props.assignedTo?.avatar ?
-            <><AvatarImage src={'/avatar?url=' + encodeURI(props.assignedTo?.avatar)} alt={props.assignedTo?.name} title={props.assignedTo?.name} /><HeaderItemValue>{props.assignedTo?.name || 'not assigned'}</HeaderItemValue></>
+            <><AvatarImage src={'/jira/avatar?url=' + encodeURI(props.assignedTo?.avatar)} alt={props.assignedTo?.name} title={props.assignedTo?.name} /><HeaderItemValue>{props.assignedTo?.name || 'not assigned'}</HeaderItemValue></>
             : <HeaderItemValue>{props.assignedTo?.name || 'not assigned'}</HeaderItemValue>
           : <HeaderItemValue>...</HeaderItemValue>
         }

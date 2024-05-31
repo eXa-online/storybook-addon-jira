@@ -1,6 +1,6 @@
 {
   "name": "@exa-online/storybook-jira-addon",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "An extra panel to show JIRA tickets concerning certain components.",
   "keywords": [
     "storybook-addons",

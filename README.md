@@ -47,7 +47,7 @@ export default {
     ```js
     module.exports = function expressMiddleware(router) {
   
-      router.get('/api', (req, res) => {
+      router.get('/jira/api', (req, res) => {
           const myHeaders = new Headers()
           myHeaders.append("Authorization", `Bearer ${process.env?.STORYBOOK_JIRA_PERSONAL_ACCESS_TOKEN}`)
           myHeaders.append("Content-Type", "application/json")
@@ -67,7 +67,7 @@ export default {
             .catch(error => console.log('error', error));
       })
 
-      router.get('/avatar', (req, res) => {
+      router.get('/jira/avatar', (req, res) => {
         const myHeaders = new Headers()
         myHeaders.append("Authorization", `Bearer ${process.env.STORYBOOK_JIRA_PERSONAL_ACCESS_TOKEN}`)
       
