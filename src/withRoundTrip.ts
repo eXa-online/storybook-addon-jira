@@ -12,10 +12,24 @@ export const withRoundTrip = (storyFn: StoryFunction<Renderer>) => {
     [EVENTS.REQUEST]: async ({ ticketId, isForSubtask }) => {
       let data = null
       if (ticketId) {
-        const fetchedData = await fetch(`/api?ticketId=${ticketId}`)
-        data = await fetchedData.json()
-        const parsedData = parseTicketData(data)
-        emit(EVENTS.RESULT, parsedData)
+          const fetchedData = await fetch(`/api?ticketId=${ticketId}`)
+        if (fetchedData.ok) {
+          try {
+            data = await fetchedData.json()
+            const parsedData = parseTicketData(data)
+            emit(EVENTS.RESULT, parsedData)
+          } catch (e) {
+            emit(EVENTS.RESULT, {
+              overview: {},
+              subtasks: {},
+            });
+          }
+        } else {
+          emit(EVENTS.RESULT, {
+            overview: {},
+            subtasks: {},
+          });
+        }
       }
     },
     [STORY_CHANGED]: () => {

@@ -20,7 +20,7 @@ export default {
 ```
 
 ## Installation
-1.  To add this addon to your storybook configuration, first run `yarn add storybook-jira-addon`.
+1.  To add this addon to your storybook configuration, first run `yarn add @exa-online/storybook-jira-addon`.
 2.  Then add it to the `addons` array in `main.js`:
     ```js
     addons: [
